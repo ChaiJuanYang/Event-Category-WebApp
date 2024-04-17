@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/angular.json" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #fcfcf4d6;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+        }
+        .statistics-box {
+            border: 5px solid #502912;
+            padding: 10px;
+            margin: auto;
+            display: inline-block;
+        }
+        .btn-primary {
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/assets/event_management_app.jpg" width="100%">
+ 
+        <div class="container">
+            <div class="btn-primary">
+                <a routerLink="/add-category" style="margin-right: 10px;">Add Category</a> 
+                <a routerLink="/list-categories" style="margin-right: 10px;">List Category</a>
+                <a routerLink="/delete-categories" style="margin-right: 10px;">Delete Category</a> 
+                <a routerLink="/update-category" style="margin-right: 10px;">Update Category</a> 
+                <a routerLink="/stats-g1" style="margin-right: 10px;">Stats G1</a> 
+                <a routerLink="/text-to-speech" style="margin-right: 10px;">Text to Speech</a> 
+                <router-outlet></router-outlet>  
+            </div>
+        </div>
+
+
+<br>
+<app-footer></app-footer>

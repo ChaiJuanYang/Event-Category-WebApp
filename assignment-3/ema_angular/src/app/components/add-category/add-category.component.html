@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            background-color: #fcfcf4d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* width: 200vh; */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+    <h1>Add Event Category</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name" placeholder="Enter Category Name" required>
+        
+        <label for="description">Description:</label>
+        <input type="text" [(ngModel)]="description" class="form-control" id="description" placeholder="Enter Description" name="description" required>
+        
+        <label for="image">Image:</label>
+        <input type="text" [(ngModel)]="image" class="form-control" id="image" name="image" placeholder="Enter Static Resource Path">
+        
+        <button class="btn btn-primary" (click)="saveCategory()">Submit</button>
+    </form>
+        
+    </div>
+</body>
+</html>

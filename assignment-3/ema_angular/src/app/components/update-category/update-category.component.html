@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="name" class="form-control" id="name" name="name" placeholder="Enter Category Name" required>
+        
+        <label for="description">Description:</label>
+        <input type="text" [(ngModel)]="description" class="form-control" id="description" placeholder="Enter Description" name="description" required>
+        
+        <label for="image">Image:</label>
+        <input type="text" [(ngModel)]="image" class="form-control" id="image" name="image" placeholder="Enter Static Resource Path">
+        
+        <button class="btn btn-primary" (click)="onUpdateCategory()">Submit</button>
+    </form>
+    <div class="container-fluid">
+        <div class="section">
+            <h1>List Category</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Created Date</th>
+                        <th>Events Count</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of categoriesDb">
+                        <td>{{ item.categoryID }}</td>
+                        <td>{{ item.name | listEventCaps }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>
+                            <img [src]="'assets/' + item.image " style="width: 210px; height:auto;" >
+                        </td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.events }}</td>
+                        <td><button type="submit" class="btn btn-primary" (click)="onSelectUpdate(item)">Update</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="section">
+            <h1>List Category</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Category ID</th>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Created Date</th>
+                        <th>Events Count</th>
+                        <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of categoriesDb">
+                        <td>{{ item.categoryID }}</td>
+                        <td>{{ item.name | listEventCaps }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>
+                            <img [src]="'assets/' + item.image " style="width: 210px; height:auto;" >
+                        </td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.events }}</td>
+                        <td><button type="submit" class="btn btn-primary" (click)="onSelectCategory(item)">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

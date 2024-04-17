@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/bootstrap.min.css" rel="stylesheet" />
+    
+    <style>
+        body {
+            background-color: #fcfcf4d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* width: 200vh; */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+    <h1>Text to Speech</h1>
+    <form>
+        <label for="speechstr">Enter Text:</label>
+        <input type="text" [(ngModel)]="speechstr" class="form-control" id="speechstr" name="speechstr" placeholder="Enter Text to Speech" required>
+        
+        <button class="btn btn-primary" type="button" (click)="convertToSpeech()">Submit</button>
+    </form>
+    <div *ngIf="mp3FilePath">
+        <audio controls>
+            <source [src]="mp3FilePath" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+        </div>
+   
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="section">
+            <div class="container">
+                <h2>Category Details</h2>
+                <img src="/assets/event_category.jpg" width="100%">
+                
+                    <h3>Category ID:</h3>
+                    <p>{{ category._id }}</p>
+                    <h3>Category Name:</h3>
+                    <p>{{ category.name }}</p>
+                    <h3>Description:</h3>
+                    <p>{{ category.description }}</p>
+                    <h3>Created Date:</h3>
+                    <p>{{ category.date }}</p>
+                    <h3>Category ID:</h3>
+                    <p>{{ category.categoryID }}</p>
+                    <p><img [src]="'assets/'  + category.image" alt="Category Image" width = 300px> </p>
+               
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Duration</th>
+                        <th>Is Active</th>
+                        <th>Capacity</th>
+                        <th>Tickets Available</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
+    </div>
+</body>
+</html>
