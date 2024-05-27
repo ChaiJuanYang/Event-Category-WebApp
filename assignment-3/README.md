@@ -1,1 +1,1 @@
-# FIT2095 Assignment Repository
+Event and Category Web Application for event and category registration 
